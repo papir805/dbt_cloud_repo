@@ -1,0 +1,29 @@
+# version: 2
+
+# sources:
+#     - name: staging
+#       database: de-zoomcamp-944
+#       schema: nytaxi
+
+#       tables:
+#         - name: external_green_tripdata
+#         - name: external_yellow_tripdata
+
+version: 2
+
+sources:
+    - name: staging
+      #For bigquery:
+      database: de-zoomcamp-944
+
+      # For postgres:
+      # database: production
+
+      schema: nytaxi
+
+      # loaded_at_field: record_loaded_at
+      tables:
+        - name: external_green_tripdata
+        - name: external_yellow_tripdata
+         # freshness:
+           # error_after: {count: 6, period: hour}
